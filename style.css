@@ -1,1 +1,139 @@
 *{box-sizing:border-box}body{margin:0;background:#0b1425;color:#e8f1fa;font:1rem/1.65 system-ui,sans-serif}header,main{max-width:46rem;margin:auto;padding:1.5rem}header{display:flex;align-items:center;justify-content:space-between;gap:1rem;border-bottom:1px solid #294056;flex-wrap:wrap}nav{display:flex;gap:1rem}header>a{font-weight:800;letter-spacing:.08em;text-decoration:none;color:#e8f1fa}main{padding-top:3.5rem}h1{font-size:clamp(2rem,7vw,3.5rem);line-height:1.1;margin:0 0 1.5rem}h2{font-size:1.25rem;margin-top:2rem}a{color:#80eaf4;overflow-wrap:anywhere}a:focus-visible{outline:2px solid #80eaf4;outline-offset:4px}
+:root {
+  color-scheme: dark;
+  --ice: #9ceefb;
+  --muted: #aebed3;
+  --edge: #33455e;
+}
+
+body {
+  background: radial-gradient(ellipse at 85% 0%, #1c2a47 0, transparent 34rem), #0b1425;
+}
+
+.home {
+  background:
+    radial-gradient(ellipse at 77% 19%, #21445d 0, transparent 31rem),
+    radial-gradient(ellipse at 83% 54%, #2a1c47 0, transparent 34rem),
+    #0a1121;
+}
+
+.home main { max-width: none; padding: 0; }
+
+.site-header, .site-footer, .hero, .how {
+  width: min(100% - 3rem, 72rem);
+  max-width: none;
+  margin-inline: auto;
+}
+
+.site-header { padding: 1.25rem 0; }
+.site-header a, .site-footer a { text-decoration: none; }
+.site-header a:hover, .site-footer a:hover { text-decoration: underline; }
+.brand { display: inline-flex; align-items: center; gap: .65rem; letter-spacing: .03em; }
+.brand img { border-radius: .5rem; }
+.site-header nav a, .site-footer a { color: var(--muted); }
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  align-items: center;
+  gap: clamp(2rem, 7vw, 6rem);
+  padding-block: clamp(3rem, 8vw, 7rem);
+}
+
+.platform {
+  margin: 0 0 1rem;
+  color: var(--ice);
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(3.1rem, 8.5vw, 8rem);
+  letter-spacing: -.085em;
+  line-height: .98;
+}
+
+.hero h1 span {
+  color: #a9e9ff;
+  background: linear-gradient(135deg, #e3fbff, #8cdefe 49%, #d3adfa);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tagline { margin: 1.15rem 0 .45rem; font-size: clamp(1.35rem, 3vw, 2rem); font-weight: 650; }
+.intro { max-width: 34ch; margin-top: 0; color: var(--muted); font-size: 1.12rem; }
+
+.hero-link {
+  display: inline-flex;
+  gap: .8rem;
+  align-items: center;
+  margin-top: .75rem;
+  padding: .65rem 1rem;
+  border: 1px solid #76cde6;
+  border-radius: .45rem;
+  background: #142b40;
+  color: #c1f6ff;
+  text-decoration: none;
+  font-weight: 650;
+}
+
+.hero-link:hover { background: #21445d; }
+
+.gameplay {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 18rem);
+  margin: 0 auto;
+}
+
+.gameplay::before,
+.gameplay::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  inset: 6% -13% 12%;
+  border: 1px solid #6396b5;
+  background: linear-gradient(145deg, #40738b85, #23253e26 50%, #8a6db464);
+  clip-path: polygon(24% 0, 100% 9%, 86% 85%, 17% 100%, 0 45%);
+  transform: rotate(13deg);
+}
+
+.gameplay::after {
+  inset: 11% -13% 13%;
+  transform: rotate(-14deg);
+  opacity: .65;
+}
+
+.gameplay img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #688aa8;
+  border-radius: 1rem;
+  box-shadow: 0 1.25rem 3rem #050a17aa;
+}
+
+.gameplay figcaption {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+.how { padding: 2rem 0 4rem; border-top: 1px solid var(--edge); }
+.how h2 { margin: 0 0 1.5rem; font-size: clamp(1.6rem, 4vw, 2.4rem); }
+.mechanics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.mechanics > div { padding: 1.15rem; border: 1px solid var(--edge); border-radius: .65rem; background: #142139; }
+.mechanics h3 { margin: 0 0 .35rem; color: var(--ice); font-size: 1.05rem; }
+.mechanics p { margin: 0; color: var(--muted); }
+.site-footer { display: flex; flex-wrap: wrap; gap: 1rem; padding-block: 1.35rem; border-top: 1px solid var(--edge); }
+.site-footer span { margin-right: auto; font-weight: 650; }
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; }
+  .gameplay { width: min(72%, 17rem); }
+  .mechanics { grid-template-columns: 1fr; }
+}
