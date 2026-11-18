@@ -19,7 +19,112 @@ body {
 
 .home main { max-width: none; padding: 0; }
 
-.site-header, .site-footer, .hero, .how { padding: clamp(2.75rem, 6vw, 5rem) 0; border-top: 1px solid var(--edge); }
+.site-header, .site-footer, .hero, .how {
+  width: min(100% - 3rem, 72rem);
+  max-width: none;
+  margin-inline: auto;
+}
+
+.site-header { padding: 1.25rem 0; }
+.site-header a, .site-footer a { text-decoration: none; }
+.site-header a:hover, .site-footer a:hover { text-decoration: underline; }
+.brand { display: inline-flex; align-items: center; gap: .65rem; letter-spacing: .03em; }
+.brand img { border-radius: .5rem; }
+.site-header nav a, .site-footer a { color: var(--muted); }
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  align-items: center;
+  gap: clamp(2rem, 7vw, 6rem);
+  padding-block: clamp(3rem, 8vw, 7rem);
+}
+
+.platform {
+  margin: 0 0 1rem;
+  color: var(--ice);
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(3.1rem, 8.5vw, 8rem);
+  letter-spacing: -.085em;
+  line-height: .98;
+}
+
+.hero h1 span {
+  color: #a9e9ff;
+  background: linear-gradient(135deg, #e3fbff, #8cdefe 49%, #d3adfa);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tagline { margin: 1.15rem 0 .45rem; font-size: clamp(1.35rem, 3vw, 2rem); font-weight: 650; }
+.intro { max-width: 34ch; margin-top: 0; color: var(--muted); font-size: 1.12rem; }
+
+.hero-link {
+  display: inline-flex;
+  gap: .8rem;
+  align-items: center;
+  margin-top: .75rem;
+  padding: .65rem 1rem;
+  border: 1px solid #76cde6;
+  border-radius: .45rem;
+  background: #142b40;
+  color: #c1f6ff;
+  text-decoration: none;
+  font-weight: 650;
+}
+
+.hero-link:hover { background: #21445d; }
+
+.gameplay {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 18rem);
+  margin: 0 auto;
+}
+
+.gameplay::before,
+.gameplay::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  inset: 6% -13% 12%;
+  border: 1px solid #6396b5;
+  background: linear-gradient(145deg, #40738b85, #23253e26 50%, #8a6db464);
+  clip-path: polygon(24% 0, 100% 9%, 86% 85%, 17% 100%, 0 45%);
+  transform: rotate(13deg);
+}
+
+.gameplay::after {
+  inset: 11% -13% 13%;
+  transform: rotate(-14deg);
+  opacity: .65;
+}
+
+.gameplay img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #688aa8;
+  border-radius: 1rem;
+  box-shadow: 0 1.25rem 3rem #050a17aa;
+}
+
+.gameplay figcaption {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+
+.how { padding: clamp(2.75rem, 6vw, 5rem) 0; border-top: 1px solid var(--edge); }
 .section-heading { margin-bottom: 1.75rem; }
 .how h2 {
   margin: 0;
