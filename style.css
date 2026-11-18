@@ -135,20 +135,37 @@ body {
 .section-heading p { margin: .55rem 0 0; color: var(--muted); }
 
 .teaser {
+  display: grid;
+  grid-template-columns: minmax(0, 18rem) minmax(0, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.4rem, 5vw, 4rem);
   margin: 0 0 2rem;
-  overflow: hidden;
+  padding: clamp(1.15rem, 4vw, 2.75rem);
   border: 1px solid var(--edge);
   border-radius: 1rem;
-  background: #101a2e;
+  background: radial-gradient(ellipse at 20% 30%, #23435a, transparent 62%), #131d33;
 }
 .teaser video {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 9 / 16;
+  border-radius: .75rem;
   background: #0a1121;
 }
-.teaser figcaption { padding: .65rem 1rem; color: var(--muted); font-size: .9rem; }
+.teaser figcaption { color: var(--muted); }
+.teaser h3 {
+  margin: 0 0 .6rem;
+  color: #e8f1fa;
+  font-size: clamp(1.45rem, 4vw, 2.7rem);
+  line-height: 1.1;
+  letter-spacing: -.035em;
+}
+.teaser p { max-width: 38ch; }
+@media (max-width: 620px) {
+  .teaser { grid-template-columns: minmax(0, 22rem); }
+}
 
 .play-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.15rem; }
 .play-card {
