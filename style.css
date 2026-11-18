@@ -134,6 +134,22 @@ body {
 }
 .section-heading p { margin: .55rem 0 0; color: var(--muted); }
 
+.teaser {
+  margin: 0 0 2rem;
+  overflow: hidden;
+  border: 1px solid var(--edge);
+  border-radius: 1rem;
+  background: #101a2e;
+}
+.teaser video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #0a1121;
+}
+.teaser figcaption { padding: .65rem 1rem; color: var(--muted); font-size: .9rem; }
+
 .play-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.15rem; }
 .play-card {
   margin: 0;
